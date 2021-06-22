@@ -19,4 +19,7 @@ Accuracy calculated based the difference of predicted stock price and the actual
 Method 1: 57.19% accuracy i.e., 57.19% of datapoints were predicted within difference of 0.2 of the actual price.
 Method 2: 82.60% accuracy i.e., 82.60% of datapoints were predicted within difference of 0.2 of the actual price.
 
-When analysed the differences between both the methods the following reasoning seemed apt. In method 1, the trainining set did not include the maximum stock price in the whole data set. The model only learnt about the prices that were in the range of training set. If there is a datapoint in test set that is not in the range of the train set, the model prediction is very different from the actual price. Refer to the following image.
+When analysed the differences between both the methods the following reasoning seemed apt. In method 1, the trainining set did not include the maximum stock price in the whole data set. The model only learnt about the prices that were in the range of training set. If there is a datapoint in test set that is not in the range of the train set, the model prediction is very different from the actual price. Refer to the following image. This is the resulted in huge loss. 
+![Screenshot 2021-05-17 19 22 56](https://user-images.githubusercontent.com/77033276/122872561-7bb90980-d2e5-11eb-9a04-01142053b4fd.png)
+
+Whereas in method 2 we split the dataset randomly, hence during the training stage the model has access to the highest price and hence made less error on the test set.
